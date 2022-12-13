@@ -5,11 +5,13 @@ import com.fastcampus.projectboard.domain.Article;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+
 //import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
 //import org.springframework.boot.test.autoconfigure.orm.jpa.AutoConfigureDataJpa;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.context.annotation.Import;
 import org.springframework.test.context.ActiveProfiles;
+
 
 import java.util.List;
 
@@ -21,6 +23,7 @@ import static org.assertj.core.api.Assertions.*;
 @DisplayName("JPA 연결 테스트")
 @Import(JpaConfig.class) //내가 만들어 준 config파일을 인식하기 위해 임포트함
 @DataJpaTest //테스트는 단위별로 트랜잭션이고, rollback을 함
+
 class JpaRepositoryTest {
     private final ArticleRepository articleRepository;
     private final ArticleCommentRepository articleCommentRepository;
@@ -92,5 +95,6 @@ class JpaRepositoryTest {
         //then
         assertThat(articleRepository.count()).isEqualTo(previousArticleCount - 1);
         assertThat(articleCommentRepository.count()).isEqualTo(previousArticleCommentCount - deletedCommentsSize);
+
     }
 }
