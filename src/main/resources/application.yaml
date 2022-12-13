@@ -26,7 +26,11 @@ spring:
   h2.console.enabled: true
   sql.init.mode: always
 
----
+--- #해당 분기점을 기준으로 설정을 분리하고 분리한 설정 값을 의도에 맞게 배치하여 사용 가능함.
 #spring:
-#  profiles:
-#    active:
+#  config.activate.on-profile: testdb
+#  datasource:
+#    url: jdbc:h2:mem:board;mode=mysql
+#    driverClassName: org.h2.Driver
+#  sql.init.mode: always
+#  test.database.replace: none #auto값을 사용하지 않고 activeprofile에 지정한 db 옵션으로 사용하겠다는 명시 default는 any / 전역으로도 활용 가능
