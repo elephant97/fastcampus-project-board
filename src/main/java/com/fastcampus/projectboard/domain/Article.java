@@ -24,9 +24,9 @@ import java.util.Set;
         @Index(columnList = "createdBy")
 })
 
-@EntityListeners(AuditingEntityListener.class)
+//@EntityListeners(AuditingEntityListener.class) //auditing이 필요한 객체를 class로 따로 추출함
 @Entity
-public class Article {
+public class Article extends AuditingFields{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -45,10 +45,13 @@ public class Article {
     //이 Article에 연동되어있는 커멘트는 중복을 허용하지 않고 다 모아서 컬렉션으로 보기위해
 
     //meta data
-    @CreatedDate @Column(nullable = false) private LocalDateTime createdAt; //생성일시
-    @CreatedBy @Column(nullable = false, length = 100) private String createdBy; //생성자
-    @LastModifiedDate @Column(nullable = false) private LocalDateTime modifiedAt; //수정일시
-    @LastModifiedBy @Column(nullable = false, length = 100) private String modifiedBy; //수정문
+    // 컬럼값을 개별로 아래와 같이 선언하는 대신에 @Embedded 클래스안에 필드값을 넣어 한번에 테이블에 적용할 수도 있음
+//    @CreatedDate @Column(nullable = false) private LocalDateTime createdAt; //생성일시
+//    @CreatedBy @Column(nullable = false, length = 100) private String createdBy; //생성자
+//    @LastModifiedDate @Column(nullable = false) private LocalDateTime modifiedAt; //수정일시
+//    @LastModifiedBy @Column(nullable = false, length = 100) private String modifiedBy; //수정문
+    //extens 하도록 변경함
+
 
     protected Article() {}
 
