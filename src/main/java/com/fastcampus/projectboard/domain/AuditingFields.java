@@ -31,7 +31,7 @@ public class AuditingFields {
 
     @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME)
     @LastModifiedDate
-    @Column(nullable = false) //최초 한번만 세팅되어야 하기 때문에 update가 불가능하게 옵션을 추가
+    @Column(nullable = false)
     private LocalDateTime modifiedAt; //수정일시
 
     @LastModifiedBy
