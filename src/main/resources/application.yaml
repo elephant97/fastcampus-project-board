@@ -13,7 +13,7 @@ spring:
   datasource:
     url: jdbc:mysql://localhost:3306/board
     username: psm
-    password: tnals123
+    password: 1234
     driver-class-name: com.mysql.cj.jdbc.Driver
 #    url: jdbc:h2:mem:testdb #h2 테스트 db로 활용하기 위해선 다음을 꼭 기억하고 작성해야한다. http://localhost:8080/h2-console
 #    username: sa
