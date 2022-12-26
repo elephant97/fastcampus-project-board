@@ -34,7 +34,7 @@ class ArticleControllerTest {
                 .andExpect(model().attributeExists("articles"));
     }
 
-    @Disabled("구현 중")
+//    @Disabled("구현 중")
     @DisplayName("[view] [GET] 게시글 상세페이지 - 정상 호출")
     @Test
     public void givenNothing_whenRequestingArticleView_thenReturnsArticleView() throws Exception {
@@ -45,7 +45,7 @@ class ArticleControllerTest {
                 .andExpect(status().isOk()) //200?
                 .andExpect(content().contentTypeCompatibleWith(MediaType.TEXT_HTML)) //view라서 타입이 HTML
                 .andExpect(view().name("articles/detail"))
-                .andExpect(model().attributeExists("articles"))
+                .andExpect(model().attributeExists("article"))
                 .andExpect(model().attributeExists("articleComments")); //게시글 데이터를 model attribute가 추가하도록
     }
 
