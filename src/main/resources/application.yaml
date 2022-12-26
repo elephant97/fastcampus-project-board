@@ -31,6 +31,7 @@ spring:
   data.rest:
       base-path: /api
       detection-strategy: annotated #annotaion에 지정한 레포지토리만 api로 노출시키는 옵션
+  thymeleaf3.decoupled-logic: true
 
 
 --- #해당 분기점을 기준으로 설정을 분리하고 분리한 설정 값을 의도에 맞게 배치하여 사용 가능함.
