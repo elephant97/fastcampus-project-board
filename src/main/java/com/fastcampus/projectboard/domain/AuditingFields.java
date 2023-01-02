@@ -18,7 +18,7 @@ import java.time.LocalDateTime;
 @Getter //자동 세팅 되어야 하기 때문에 getter만 넣음
 @EntityListeners(AuditingEntityListener.class)
 @MappedSuperclass
-public class AuditingFields {
+public abstract class AuditingFields { //엔티티를 상속해서 사용해야하는 목적에 더 잘 맞도록 abstract 사용
 
     @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME) //iso 객체를 써서 포맷팅
     @CreatedDate
