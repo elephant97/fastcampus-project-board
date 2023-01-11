@@ -1,4 +1,8 @@
 
+--테스트 계정
+-- TODO: 테스트 내용이지만 비밀번호가 노출된 데이터 세팅, 개선하는 것이 좋을지 고민해보자.
+insert into user_account(user_id, user_password, nickname, email, memo, created_at, created_by, modified_at, modified_by)
+values ('psm','1234','psm','smzzang@gmail.com','test account',now(),'psm',now(),'psm');
 --123개의 게시글
 insert into article (title, content, hashtag, created_by, modified_by, created_at, modified_at)
 values ('Nulla ut erat id mauris vulputate elementum.',

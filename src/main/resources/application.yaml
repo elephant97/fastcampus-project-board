@@ -13,7 +13,7 @@ spring:
   datasource:
     url: jdbc:mysql://localhost:3306/board
     username: psm
-    password: tnals123
+    password: 1234
     driver-class-name: com.mysql.cj.jdbc.Driver
 #    url: jdbc:h2:mem:testdb #h2 테스트 db로 활용하기 위해선 다음을 꼭 기억하고 작성해야한다. http://localhost:8080/h2-console
 #    username: sa
@@ -31,6 +31,7 @@ spring:
   data.rest:
       base-path: /api
       detection-strategy: annotated #annotaion에 지정한 레포지토리만 api로 노출시키는 옵션
+  thymeleaf3.decoupled-logic: true
 
 
 --- #해당 분기점을 기준으로 설정을 분리하고 분리한 설정 값을 의도에 맞게 배치하여 사용 가능함.

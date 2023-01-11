@@ -1,0 +1,5 @@
+<?xml version="1.0"?>
+<thlogic>
+    <attr sel="#header" th:replace="header :: header"/> <!--만일 연결 할 대상이 여러개라면 id로 링크-->
+    <attr sel="#footer" th:replace="footer :: footer"/>
+</thlogic>
